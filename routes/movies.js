@@ -5,10 +5,10 @@ const { movieCreateValidation, movieDeleteValidation } = require('../middlwares/
 
 const { getMovie, createMovie, deleteMovieById } = require('../controllers/movies');
 
-moviesRoutes.get('/', auth, getMovie);
+moviesRoutes.get('/movies', auth, getMovie);
 
 moviesRoutes.post(
-  '/',
+  '/movies',
   auth,
   movieCreateValidation,
   express.json(),
@@ -16,7 +16,7 @@ moviesRoutes.post(
 );
 
 moviesRoutes.delete(
-  '/:movieId',
+  '/movies/:movieId',
   auth,
   movieDeleteValidation,
   deleteMovieById,
