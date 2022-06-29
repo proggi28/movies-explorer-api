@@ -10,12 +10,12 @@ const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlwares/logger');
 const auth = require('./middlwares/auth');
 
-const { DATA_BASE, PORT = 3000 } = process.env;
+const { PORT = 3000 } = process.env;
 
 const app = express();
 
 async function main() {
-  await mongoose.connect(DATA_BASE, {
+  await mongoose.connect('mongodb://localhost:27017/moviesdb', {
     useNewUrlParser: true,
     useUnifiedTopology: false,
   });
