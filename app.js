@@ -10,7 +10,7 @@ const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlwares/logger');
 const auth = require('./middlwares/auth');
 
-const PORT = process.env.PORT || 4000;
+const { PORT = 3000 } = process.env;
 
 const app = express();
 
@@ -27,7 +27,7 @@ main();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://api.movie-karpenko.nomoreparties.sbs/'],
+    origin: ['http://localhost:3000', 'https://api.movie-karpenko.nomoreparties.sbs'],
     credentials: true,
   }),
 );
