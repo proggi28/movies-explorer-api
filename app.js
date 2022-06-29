@@ -10,12 +10,12 @@ const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlwares/logger');
 const auth = require('./middlwares/auth');
 
-const { PORT = 3000 } = process.env;
+const { DATA_BASE, PORT = 3000 } = process.env;
 
 const app = express();
 
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/moviesdb', {
+  await mongoose.connect(DATA_BASE, {
     useNewUrlParser: true,
     useUnifiedTopology: false,
   });
@@ -27,7 +27,7 @@ main();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://api.movie-karpenko.nomoreparties.sbs'],
+    origin: ['http://localhost:3000', 'https://api.movie-karpenko.nomoreparties.sbs/'],
     credentials: true,
   }),
 );
