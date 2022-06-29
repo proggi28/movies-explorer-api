@@ -10,7 +10,7 @@ const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlwares/logger');
 const auth = require('./middlwares/auth');
 
-const { PORT } = process.env;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -20,7 +20,7 @@ async function main() {
     useUnifiedTopology: false,
   });
 
-  app.listen(PORT || 3000);
+  app.listen(PORT);
 }
 
 main();
