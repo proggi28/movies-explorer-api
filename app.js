@@ -1,8 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-require('dotenv').config();
 const { errors } = require('celebrate');
 const { usersRoutes } = require('./routes/users');
 const { moviesRoutes } = require('./routes/movies');
@@ -27,7 +27,7 @@ main();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://api.movie-karpenko.nomoreparties.sbs/'],
+    origin: ['http://localhost:3000', 'https://api.movie-karpenko.nomoreparties.sbs'],
     credentials: true,
   }),
 );
