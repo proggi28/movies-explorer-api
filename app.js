@@ -10,7 +10,7 @@ const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlwares/logger');
 const auth = require('./middlwares/auth');
 
-const { PORT = 3000 } = process.env;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
