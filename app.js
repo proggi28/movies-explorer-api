@@ -12,10 +12,12 @@ const auth = require('./middlwares/auth');
 
 const PORT = process.env.PORT || 3000;
 
+const { DATABASE_URL } = process.env;
+
 const app = express();
 
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/moviesdb', {
+  await mongoose.connect(DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: false,
   });
