@@ -28,7 +28,7 @@ main();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://api.movie-karpenko.nomoreparties.sbs'],
+    origin: ['http://localhost:3000', 'https://api.movie-karpenko.nomoreparties.sbs', 'http://api.movie-karpenko.nomoreparties.sbs, http://action.movie.nomoredomains.xyz, https://action.movie.nomoredomains.xyz'],
     credentials: true,
   }),
 );
